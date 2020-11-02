@@ -247,6 +247,7 @@ MonoBehaviour:
   terrain: {fileID: 1598697261}
   player: {fileID: 4199603413279867748, guid: 90e70a2e83a041841a7e569a8cfb6807, type: 3}
   foe: {fileID: 4232197816607997111, guid: 93b03a0ec3dc6f540a5ca98e483b3e45, type: 3}
+  nb_foes: 5
 --- !u!1001 &1518562957234044694
 PrefabInstance:
   m_ObjectHideFlags: 0
