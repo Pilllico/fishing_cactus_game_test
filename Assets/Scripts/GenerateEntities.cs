@@ -11,9 +11,9 @@ public class GenerateEntities : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = new Vector3(-500, -500, 10);
+        int width = terrain.terrainData.heightmapWidth / 2;
+        player.transform.position = new Vector3(Random.Range(-width, width), 30, Random.Range(-width, width));
         Instantiate(player);
-        Debug.Log("Done");
     }
 
     // Update is called once per frame
