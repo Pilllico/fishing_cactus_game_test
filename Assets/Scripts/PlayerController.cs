@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 50f;
     public float rotation_speed = 30f;
     public AudioClip engine;
-    public GameObject shell;
+    public AudioClip fire;
+    public GameObject shell_body;
 
     private AudioSource audio_source;
     private Rigidbody rigid_body;
@@ -68,9 +69,10 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        shell.transform.position = rigid_body.position - transform.right * shell_offset + new Vector3(0, 2, 0);
-        shell.transform.rotation = rigid_body.rotation;
-        Instantiate(shell);
+        audio_source.clip = fire;
+        audio_source.Play();
+
+        Instantiate(shell_body, rigid_body.position - transform.right * shell_offset + new Vector3(0, 2, 0), rigid_body.rotation);
     }
 
     private void CheckPosition()

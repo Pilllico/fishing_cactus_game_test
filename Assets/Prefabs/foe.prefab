@@ -220,8 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rotation_speed: 50
-  rotation_angle: 0
-  engine: {fileID: 8300000, guid: 5c8b8db8ba3e5e645bb34cd9d44d5db6, type: 3}
   shell: {fileID: 1347613805665316665, guid: 916968e9cbb9d2e43bff7c50a333b044, type: 3}
 --- !u!1 &4232197816607997111
 GameObject:
@@ -247,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4232197816607997111}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 30, z: -267}
+  m_LocalPosition: {x: 21, y: 30, z: -193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4232197816608219285}

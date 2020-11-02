@@ -265,6 +265,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1518562956926667492, guid: 50faa92688398aa47b1967f8ec00bbc6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 1518562956926667491, guid: 50faa92688398aa47b1967f8ec00bbc6,
         type: 3}
       propertyPath: m_LocalPosition.x
