@@ -19,7 +19,6 @@ public class ShellBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogWarning("prout");
         Vector3 pos = new Vector3(
             start_pos.x + 5 * velocity.x * Time.deltaTime,
             start_pos.y + 5 * velocity.y * Time.deltaTime,

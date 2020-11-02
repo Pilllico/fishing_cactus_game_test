@@ -2,42 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class FoeController : MonoBehaviour
 {
-    public float speed = 50f;
-    public float rotation_speed = 30f;
-    public AudioClip engine;
+    public float speed = 20f;
+    public float rotation_speed = 0f;
     public GameObject shell;
 
-    private AudioSource audio_source;
     private Rigidbody rigid_body;
-    private float movement_input;
-    private float turn_input;
     private float shell_offset = 10;
 
 
     private void Awake()
     {
         rigid_body = GetComponent<Rigidbody>();
-        audio_source = GetComponent<AudioSource>();
+        StartCoroutine(RandomRotation());
     }
 
-    private void Update()
+    IEnumerator RandomRotation()
     {
-        movement_input = Input.GetAxis("Vertical");
-        turn_input = Input.GetAxis("Horizontal");
-
-        if (!audio_source.isPlaying)
+        while (true)
         {
-            EngineAudio();
+            yield return new WaitForSeconds(1);
+            rotation_speed = Random.Range(-50, 50);
         }
-    }
-
-
-    private void EngineAudio()
-    {
-        audio_source.clip = engine;
-        audio_source.Play();
     }
 
 
@@ -45,23 +32,24 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Rotate();
-
+        /*
         if (Input.GetKeyDown("space"))
         {
             Fire();
         }
+        */
         CheckPosition();
     }
 
     private void Move()
     {
-        Vector3 movement = -transform.right * movement_input * speed * Time.deltaTime;
+        Vector3 movement = -transform.right * speed * Time.deltaTime;
         rigid_body.MovePosition(rigid_body.position + movement);
     }
 
     private void Rotate()
     {
-        float turn = turn_input * rotation_speed * Time.deltaTime;
+        float turn = rotation_speed * Time.deltaTime;
         Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         rigid_body.MoveRotation(rigid_body.rotation * rotation);
     }
